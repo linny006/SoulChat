@@ -65,7 +65,7 @@ def answer(user_history, bot_history, sample=True, top_p=0.75, temperature=0.95)
         input_text = context + "\n用户：" + user_history[-1] + "\n心理咨询师："
     else:
         input_text = "用户：" + user_history[-1] + "\n心理咨询师："
-        return "你好！我是你的个人专属数字辅导员甜心老师，欢迎找我倾诉、谈心，期待帮助到你！"
+        return "你好！我是你的个人专属数字辅导员静心老师，欢迎找我倾诉、谈心，期待帮助到你！"
     
     print(input_text)
     if not sample:
@@ -81,27 +81,27 @@ def answer(user_history, bot_history, sample=True, top_p=0.75, temperature=0.95)
     
 
 st.set_page_config(
-    page_title="SoulChat(内测版)",
-    page_icon="👩‍🏫",
+    page_title="椒兰科技心理健康模型 demo",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items={
         'About': """     
--   版本：👩‍🏫SoulChat(内测版)
--   机构：广东省数字孪生人重点实验室
--   作者：陈艺荣
+-   版本: v0.1
+-   机构：北京椒兰科技有限公司
+-   作者: mark@jonlantech.com
 	    """
     }
 )
 
-st.header("👩‍🏫SoulChat(内测版)")
+st.header("椒兰科技心理健康模型 demo")
 
 with st.expander("ℹ️ - 关于我们", expanded=False):
     st.write(
         """     
--   版本：👩‍🏫SoulChat(内测版)
--   机构：广东省数字孪生人重点实验室
--   作者：陈艺荣
+-   版本: v0.1
+-   机构：北京椒兰科技有限公司
+-   Email: mark@jonlantech.com
 	    """
     )
 
@@ -168,7 +168,7 @@ if st.session_state['generated']:
         if i == 0:
             # 
             message(st.session_state['past'][i], is_user=True, key=str(i) + '_user', avatar_style="avataaars", seed=26)
-            message("你好！我是你的个人专属数字辅导员甜心老师，欢迎找我倾诉、谈心❤️，期待帮助到你！🤝🤝🤝"+"\n\n------------------\n以下回答由灵心大模型SoulChat自动生成，仅供参考！", key=str(i), avatar_style="avataaars", seed=5)
+            message("你好！我是你的个人专属数字辅导员静心老师，欢迎找我倾诉、谈心❤️，期待帮助到你！🤝🤝🤝"+"\n\n------------------\n以下回答由椒兰科技心理健康模型自动生成，仅供参考！", key=str(i), avatar_style="avataaars", seed=5)
         else:
             message(st.session_state['past'][i], is_user=True, key=str(i) + '_user', avatar_style="avataaars", seed=26)
             #message(st.session_state["generated"][i]+"\n\n------------------\n本回答由灵心大模型SoulChat自动生成，仅供参考！", key=str(i), avatar_style="avataaars", seed=5)
